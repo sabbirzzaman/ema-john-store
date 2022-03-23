@@ -5,3 +5,7 @@
     position: sticky;
     top: 80px;
 }
+
+.cart h2 {
+    margin-bottom: 15px;
+}
