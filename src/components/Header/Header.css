@@ -1,14 +1,22 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 80px;
     background-color: #1C2B35;
     padding: 0 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
 }
 
 .header a {
-    color: white;
+    color: #FFF;
     text-decoration: none;
     margin-right: 25px;
+    transition: .3s ease-in-out;
+}
+
+.header a:hover {
+    color: #ff9900;
 }

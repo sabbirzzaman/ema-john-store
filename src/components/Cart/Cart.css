@@ -1,0 +1,7 @@
+.cart {
+    height: calc(100vh - 80px);
+    background-color: #FFE0B3;
+    padding: 30px 20px;
+    position: sticky;
+    top: 80px;
+}
