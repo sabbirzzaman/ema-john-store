@@ -4,8 +4,55 @@
     padding: 30px 20px;
     position: sticky;
     top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .cart h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.cart h3 {
+    margin-bottom: 8px;
+}
+
+.clear-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: #FF3030;
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.clear-cart:hover {
+    background-color: #ff3030d7;
+}
+
+.review-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: #FF9900;
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.review-cart:hover {
+    background-color: #ff8800;
 }

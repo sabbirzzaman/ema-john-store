@@ -19,7 +19,7 @@ const Product = ({ product, addToCartHandle }) => {
                 <p>
                     <b>Rating:</b> {ratings} Stars
                 </p>
-                <button className="add-to-cart" onClick={addToCartHandle}>
+                <button className="add-to-cart" onClick={() => addToCartHandle(product)}>
                     Add to Cart
                     {' '}
                     <FontAwesomeIcon icon={faShoppingCart} />

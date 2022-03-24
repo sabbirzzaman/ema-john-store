@@ -13,8 +13,8 @@ const Shop = () => {
             .then((data) => setProducts(data));
     }, []);
 
-    const addToCartHandle = (products) => {
-        const newCart = [...cart, products]
+    const addToCartHandle = (product) => {
+        const newCart = [...cart, product]
         setCart(newCart)
     }
 
