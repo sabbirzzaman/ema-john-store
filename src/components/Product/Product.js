@@ -21,7 +21,6 @@ const Product = ({ product, addToCartHandle }) => {
                 </p>
                 <button className="add-to-cart" onClick={() => addToCartHandle(product)}>
                     Add to Cart
-                    {' '}
                     <FontAwesomeIcon icon={faShoppingCart} />
                 </button>
             </div>
