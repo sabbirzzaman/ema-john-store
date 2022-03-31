@@ -1,10 +1,10 @@
 .hero-container {
-    max-width: 1140px;
+    max-width: 1220px;
     margin: 0 auto;
+    height: calc(100vh - 80px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    padding: 80px 0;
 }
 
 .hero-content p span {
@@ -12,7 +12,7 @@
 }
 
 .hero-content h1 {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .hero-content button {
@@ -32,4 +32,8 @@
 
 .hero-image {
     text-align: right;
+}
+
+.hero-image img {
+    width: 350px;
 }
