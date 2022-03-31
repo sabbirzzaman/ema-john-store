@@ -1,0 +1,35 @@
+.hero-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 80px 0;
+}
+
+.hero-content p span {
+    color: #ff9900;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+}
+
+.hero-content button {
+    background-color: #FFE0B3;
+    padding: 8px 30px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.hero-content button:hover {
+    background-color: #ff9900a3;
+
+}
+
+.hero-image {
+    text-align: right;
+}

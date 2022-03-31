@@ -1,0 +1,17 @@
+.not-founded {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.not-founded h2 {
+    font-size: 40px;
+}
+
+span.border {
+    width: 3px;
+    background-color: #FF9900;
+    height: 30px;
+}
