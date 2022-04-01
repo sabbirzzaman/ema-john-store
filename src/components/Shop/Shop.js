@@ -1,6 +1,6 @@
 import useCart from '../../Hooks/useCart';
 import useProducts from '../../Hooks/useProducts';
-import { addToDb } from '../../utilities/productsDb';
+import { addToDb, deleteCart } from '../../utilities/productsDb';
 import Cart from '../Cart/Cart';
 import Products from '../Product/Product';
 import './Shop.css';
@@ -27,6 +27,11 @@ const Shop = () => {
         addToDb(product.id);
     };
 
+    const clearCart = () => {
+        setCart([]);
+        deleteCart()
+    }
+
     return (
         <div className="shop-container">
             <div className="products-container">
@@ -40,6 +45,7 @@ const Shop = () => {
             </div>
             <Cart
                 cart={cart}
+                clearCart={clearCart}
                 btnText="Review Order"
                 containerClass="cart"
             ></Cart>

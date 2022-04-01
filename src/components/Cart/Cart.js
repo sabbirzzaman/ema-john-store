@@ -2,10 +2,9 @@ import React from 'react';
 import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { deleteCart } from '../../utilities/productsDb';
 import { useNavigate } from 'react-router-dom';
 
-const Cart = ({ cart, btnText, containerClass }) => {
+const Cart = ({ cart, btnText, containerClass, clearCart }) => {
     let quantity = 0;
     let totalPrice = 0;
     let totalShipping = 0;
@@ -40,7 +39,7 @@ const Cart = ({ cart, btnText, containerClass }) => {
 
             <div>
                 <h2>Grand Total: ${grandTotal}</h2>
-                <button className="clear-cart" onClick={deleteCart}>
+                <button className="clear-cart" onClick={clearCart}>
                     Clear Cart<FontAwesomeIcon icon={faTrash} />
                 </button>
                 <button onClick={goReviewOrders} className="review-cart">
