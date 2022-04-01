@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import useCart from '../../Hooks/useCart';
 import useProducts from '../../Hooks/useProducts';
-import { addToDb, getStoredCart } from '../../utilities/productsDb';
+import { addToDb } from '../../utilities/productsDb';
 import Cart from '../Cart/Cart';
 import Products from '../Product/Product';
 import './Shop.css';
 
 const Shop = () => {
-    const [products, setProducts] = useProducts();
+    const [products] = useProducts();
     const [cart, setCart] = useCart(products);
 
     const addToCartHandle = (product) => {
