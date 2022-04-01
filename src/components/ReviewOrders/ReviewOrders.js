@@ -1,4 +1,7 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
 import useProducts from '../../Hooks/useProducts';
 import { deleteCart, removeFromDb } from '../../utilities/productsDb';
@@ -11,15 +14,15 @@ const ReviewOrders = () => {
     const [cart, setCart] = useCart(products);
 
     const removeItemHandle = (product) => {
-        const restItem = cart.filter(item => item.id !== product.id);
-        setCart(restItem)
-        removeFromDb(product.id)
+        const restItem = cart.filter((item) => item.id !== product.id);
+        setCart(restItem);
+        removeFromDb(product.id);
     };
 
     const clearCart = () => {
         setCart([]);
-        deleteCart()
-    }
+        deleteCart();
+    };
 
     return (
         <div className="order-container">
@@ -32,12 +35,14 @@ const ReviewOrders = () => {
                     ></ReviewItem>
                 ))}
             </div>
-            <Cart
-                cart={cart}
-                btnText="Proceed Checkout"
-                containerClass="order-cart"
-                clearCart={clearCart}
-            ></Cart>
+            <Cart cart={cart} containerClass="order-cart" clearCart={clearCart}>
+                <Link to='/checkout'>
+                    <button onClick={clearCart} className="review-cart">
+                        Proceed Checkout
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                </Link>
+            </Cart>
         </div>
     );
 };

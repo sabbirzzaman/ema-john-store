@@ -5,14 +5,11 @@ import './Header.css';
 
 const Header = () => {
     const navigate = useNavigate();
-    const goHome = () => {
-        navigate('/')
-    }
 
     return (
         <div className='header'>
             <nav className="header-container">
-            <img className='site-logo' onClick={goHome} src={logo} alt="Site logo" />
+            <img className='site-logo' onClick={() => navigate('/')} src={logo} alt="Site logo" />
 
             <div>
                 <Link to="/home">Home</Link>

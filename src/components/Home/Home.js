@@ -5,16 +5,14 @@ import './Home.css'
 
 const Home = () => {
     const navigate = useNavigate();
-    const toShop = () => {
-        navigate('/shop')
-    }
+
     return (
         <div className='hero-container'>
             <div className="hero-content">
                 <p><span>Sale up to 70% off</span></p>
                 <h1>New Collection For Fall</h1>
                 <p>Discover all the new arrivals of ready-to-wear collection.</p>
-                <button onClick={toShop}>SHOP NOW</button>
+                <button onClick={() => navigate('/shop')}>SHOP NOW</button>
             </div>
             <div className="hero-image">
                 <img src={image} alt="Hero" />

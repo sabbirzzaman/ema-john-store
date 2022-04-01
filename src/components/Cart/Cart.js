@@ -1,31 +1,25 @@
 import React from 'react';
 import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ cart, btnText, containerClass, clearCart }) => {
+const Cart = ({ cart, children, containerClass, clearCart }) => {
     let quantity = 0;
     let totalPrice = 0;
     let totalShipping = 0;
 
-    for(const product of cart) {
+    for (const product of cart) {
         quantity = product.quantity + quantity;
 
         let price = product.price * product.quantity;
         totalPrice = totalPrice + price;
-        
+
         totalShipping = product.shipping + totalShipping;
     }
 
-    const tax = parseFloat((totalPrice * 5 / 100).toFixed(2));
+    const tax = parseFloat(((totalPrice * 5) / 100).toFixed(2));
 
     const grandTotal = totalPrice + totalShipping + tax;
-
-    const navigate = useNavigate();
-    const goReviewOrders = () => {
-        navigate('/review-orders')
-    }
 
     return (
         <div className={containerClass}>
@@ -40,11 +34,10 @@ const Cart = ({ cart, btnText, containerClass, clearCart }) => {
             <div>
                 <h2>Grand Total: ${grandTotal}</h2>
                 <button className="clear-cart" onClick={clearCart}>
-                    Clear Cart<FontAwesomeIcon icon={faTrash} />
+                    Clear Cart
+                    <FontAwesomeIcon icon={faTrash} />
                 </button>
-                <button onClick={goReviewOrders} className="review-cart">
-                    {btnText}<FontAwesomeIcon icon={faArrowRight} />
-                </button>
+                {children}
             </div>
         </div>
     );
