@@ -1,9 +1,9 @@
 import React from 'react';
 import './ReviewItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const ReviewItem = ({ product }) => {
+const ReviewItem = ({ product, removeItemHandle }) => {
     const { img, name, price, quantity, shipping } = product;
 
     return (
@@ -12,12 +12,12 @@ const ReviewItem = ({ product }) => {
                 <img src={img} alt={name} />
                 <div>
                     <h3>{name}</h3>
-                    <p><b>Price & Shipping:</b> {price} + {shipping}</p>
+                    <p><b>Price & Shipping:</b> ${price} + ${shipping}</p>
                     <p><b>Quantity:</b> {quantity}</p>
                 </div>
             </div>
 
-            <div className="remove-item"><FontAwesomeIcon icon={faTrash} /></div>
+            <div onClick={() => removeItemHandle(product)} className="remove-item"><FontAwesomeIcon icon={faTrashAlt} /></div>
         </div>
     );
 };

@@ -12,13 +12,14 @@ const Cart = ({ cart, btnText, containerClass }) => {
 
     for(const product of cart) {
         quantity = product.quantity + quantity;
-        totalPrice = product.price + totalPrice * product.quantity;
-        totalShipping = product.shipping + totalShipping * quantity;
+
+        let price = product.price * product.quantity;
+        totalPrice = totalPrice + price;
+        
+        totalShipping = product.shipping + totalShipping;
     }
 
-    const totalAmount = totalPrice + totalShipping;
-
-    const tax = parseFloat((totalAmount * 5 / 100).toFixed(2));
+    const tax = parseFloat((totalPrice * 5 / 100).toFixed(2));
 
     const grandTotal = totalPrice + totalShipping + tax;
 
@@ -31,9 +32,9 @@ const Cart = ({ cart, btnText, containerClass }) => {
         <div className={containerClass}>
             <div>
                 <h2>Order Summary</h2>
-                <h3>Selected Items: {quantity}</h3>
+                <h3>Total Quantity: {quantity}</h3>
                 <h3>Total Price: ${totalPrice}</h3>
-                <h3>Total Shipping Charge: ${totalShipping}</h3>
+                <h3>Total Shipping: ${totalShipping}</h3>
                 <h3>Tax: ${tax}</h3>
             </div>
 

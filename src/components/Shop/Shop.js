@@ -38,7 +38,11 @@ const Shop = () => {
                     ></Products>
                 ))}
             </div>
-            <Cart cart={cart} btnText='Review Order' containerClass='cart'></Cart>
+            <Cart
+                cart={cart}
+                btnText="Review Order"
+                containerClass="cart"
+            ></Cart>
         </div>
     );
 };
