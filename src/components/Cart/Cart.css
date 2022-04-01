@@ -67,3 +67,12 @@
         margin: 20px 10px;
     }
 }
+
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .cart {
+        padding: 20px 12px;
+        margin: 20px 0;
+    }
+}

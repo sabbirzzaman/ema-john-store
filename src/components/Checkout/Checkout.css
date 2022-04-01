@@ -7,3 +7,21 @@
     margin: 0 auto;
     padding: 80px 0;
 }
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .checkout-container {
+        max-width: 768px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .checkout-container {
+        max-width: 350px;
+    }
+
+    .checkout-container img {
+        width: 280px;
+    }
+}

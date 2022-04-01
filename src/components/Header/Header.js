@@ -21,7 +21,7 @@ const Header = () => {
                 />
 
                 <div>
-                    <div className={open ? 'nav-menu hide-nav' : 'nav-menu'}>
+                    <div className={open ? 'nav-menu' : 'nav-menu hide-nav'}>
                         <Link to="/home">Home</Link>
                         <Link to="/shop">Shop</Link>
                     </div>

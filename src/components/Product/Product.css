@@ -42,3 +42,10 @@
     background-color: #ff9900a3;
 }
 
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .product {
+        width: 90%;
+        height: 375px;
+    }
+}

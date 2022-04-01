@@ -16,18 +16,17 @@
 }
 
 .hero-content button {
-    background-color: #FFE0B3;
+    background-color: #ffe0b3;
     padding: 8px 30px;
     margin-top: 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .hero-content button:hover {
     background-color: #ff9900a3;
-
 }
 
 .hero-image {
@@ -36,4 +35,36 @@
 
 .hero-image img {
     width: 350px;
+}
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .hero-container {
+        max-width: 768px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .hero-container {
+        max-width: 350px;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
 }

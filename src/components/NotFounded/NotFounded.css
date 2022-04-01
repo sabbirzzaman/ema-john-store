@@ -15,3 +15,18 @@ span.border {
     background-color: #FF9900;
     height: 30px;
 }
+
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .not-founded h2 {
+        font-size: 32px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .not-founded h2 {
+        font-size: 22px;
+    }
+}

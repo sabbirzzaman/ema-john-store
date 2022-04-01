@@ -32,12 +32,14 @@
 @media only screen and (max-width: 688px) {
     .shop-container {
         max-width: 350px;
-        grid-template-columns: 1fr 50%;
+        grid-template-columns: 55% 44%;
+        gap: 1%;
     }
 
     .products-container {
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
-        margin-right: 10px;
+        margin-right: 0;
+        padding-top: 20px;
     }
 }
