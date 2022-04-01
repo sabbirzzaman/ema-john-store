@@ -1,0 +1,30 @@
+.order-container{
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns:3fr 2fr;
+    gap: 40px;
+}
+
+.order-cart {
+    height: 60vh;
+    background-color: #FFE0B3;
+    padding: 30px 20px;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.order-cart h2 {
+    margin-bottom: 20px;
+}
+
+.order-cart h3 {
+    margin-bottom: 8px;
+}

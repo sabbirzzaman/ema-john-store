@@ -12,7 +12,10 @@
     top: 0;
     z-index: 10;
     background-color: #1C2B35;
-    padding: 0 150px;
+}
+
+.site-logo {
+    cursor: pointer;
 }
 
 .header a {
@@ -24,4 +27,18 @@
 
 .header a:hover {
     color: #ff9900;
+}
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .header-container {
+        max-width: 768px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .header-container {
+        max-width: 350px;
+    }
 }

@@ -1,38 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import useCart from '../../Hooks/useCart';
+import useProducts from '../../Hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/productsDb';
 import Cart from '../Cart/Cart';
 import Products from '../Product/Product';
 import './Shop.css';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        fetch(`products.json`)
-            .then((res) => res.json())
-            .then((data) => setProducts(data));
-    }, []);
-
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-
-        for(const id in storedCart) {
-            const productQuantity = storedCart[id];
-
-            const storedProduct = products.find(product => product.id === id);
-
-            if(storedProduct) {
-                savedCart.push(storedProduct);
-                storedProduct.quantity = productQuantity;
-            }
-        }
-        setCart(savedCart);
-    }, [products]);
+    const [products, setProducts] = useProducts();
+    const [cart, setCart] = useCart(products);
 
     const addToCartHandle = (product) => {
-        const newCart = [...cart, product];
+        const existItem = cart.find((item) => item.id === product.id);
+
+        let newCart = [];
+
+        if (existItem) {
+            const restItem = cart.filter((item) => item.id !== product.id);
+            existItem.quantity = existItem.quantity + 1;
+            newCart = [...restItem, existItem];
+        } else {
+            product.quantity = 1;
+            newCart = [...cart, product];
+        }
+
         setCart(newCart);
         addToDb(product.id);
     };
@@ -48,7 +39,7 @@ const Shop = () => {
                     ></Products>
                 ))}
             </div>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart} btnText='Review Order' containerClass='cart'></Cart>
         </div>
     );
 };

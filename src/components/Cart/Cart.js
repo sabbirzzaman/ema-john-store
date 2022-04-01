@@ -3,8 +3,9 @@ import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { deleteCart } from '../../utilities/productsDb';
+import { useNavigate } from 'react-router-dom';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, btnText, containerClass }) => {
     let quantity = 0;
     let totalPrice = 0;
     let totalShipping = 0;
@@ -21,8 +22,13 @@ const Cart = ({ cart }) => {
 
     const grandTotal = totalPrice + totalShipping + tax;
 
+    const navigate = useNavigate();
+    const goReviewOrders = () => {
+        navigate('/review-orders')
+    }
+
     return (
-        <div className="cart">
+        <div className={containerClass}>
             <div>
                 <h2>Order Summary</h2>
                 <h3>Selected Items: {quantity}</h3>
@@ -34,10 +40,10 @@ const Cart = ({ cart }) => {
             <div>
                 <h2>Grand Total: ${grandTotal}</h2>
                 <button className="clear-cart" onClick={deleteCart}>
-                    Clear Cart <FontAwesomeIcon icon={faTrash} />
+                    Clear Cart<FontAwesomeIcon icon={faTrash} />
                 </button>
-                <button className="review-cart">
-                    Review Order <FontAwesomeIcon icon={faArrowRight} />
+                <button onClick={goReviewOrders} className="review-cart">
+                    {btnText}<FontAwesomeIcon icon={faArrowRight} />
                 </button>
             </div>
         </div>
