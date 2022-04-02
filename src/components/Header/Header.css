@@ -30,9 +30,13 @@
 }
 
 .header svg {
-    color: #fff;
+    color: rgb(23, 20, 20);
     display: none;
     cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
 }
 
 /* Medium devices (landscape tablets, 689px and up) */
@@ -52,7 +56,6 @@
         background-color: #1c2b35;
         width: 100%;
         height: 200px;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
