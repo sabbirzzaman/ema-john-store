@@ -1,7 +1,7 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
 import useProducts from '../../Hooks/useProducts';
 import { deleteCart, removeFromDb } from '../../utilities/productsDb';
@@ -24,9 +24,18 @@ const ReviewOrders = () => {
         deleteCart();
     };
 
+    const navigate = useNavigate();
+
     return (
         <div className="order-container">
             <div>
+                {cart.length === 0 && (
+                    <div className="empty-cart">
+                        <h2>There is no item in this cart!</h2>
+                        <button onClick={() => navigate('/shop')}>Continue Shopping</button>
+                    </div>
+                )}
+
                 {cart.map((product) => (
                     <ReviewItem
                         key={product.id}
@@ -36,7 +45,7 @@ const ReviewOrders = () => {
                 ))}
             </div>
             <Cart cart={cart} containerClass="order-cart" clearCart={clearCart}>
-                <Link to='/checkout'>
+                <Link to="/checkout">
                     <button onClick={clearCart} className="review-cart">
                         Proceed Checkout
                         <FontAwesomeIcon icon={faArrowRight} />

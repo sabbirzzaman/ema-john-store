@@ -30,12 +30,29 @@
     margin-bottom: 8px;
 }
 
+.empty-cart button {
+    background-color: #ffe0b3;
+    padding: 8px 30px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.empty-cart button:hover {
+    background-color: #ff9900a3;
+}
+
 /* Medium devices (landscape tablets, 689px and up) */
 @media only screen and (min-width: 689px) and (max-width: 992px) {
     .order-container {
         max-width: 768px;
         padding: 30px 0;
         gap: 30px;
+    }
+    .empty-cart {
+        margin-top: 20px;
     }
 }
 
@@ -60,5 +77,8 @@
 
     .remove-item {
         margin-right: 0px;
+    }
+    .empty-cart {
+        text-align: center;
     }
 }

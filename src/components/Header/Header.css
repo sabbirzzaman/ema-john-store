@@ -19,7 +19,7 @@
 }
 
 .header a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     margin-right: 25px;
     transition: 0.3s ease-in-out;
@@ -29,8 +29,8 @@
     color: #ff9900;
 }
 
-.header svg {
-    color: rgb(23, 20, 20);
+.navigation svg {
+    color: #ffffff;
     display: none;
     cursor: pointer;
 }
@@ -66,9 +66,12 @@
         transform: translateY(-280px);
     }
 
-    .nav-menu a {
+    .nav-menu div {
         font-size: 24px;
         margin-bottom: 5px;
+    }
+    .nav-menu a {
+        margin: 0;
     }
 }
 
@@ -104,8 +107,12 @@
         transform: translateY(-280px);
     }
 
-    .nav-menu a {
+    .nav-menu div {
         font-size: 20px;
         margin-bottom: 5px;
+    }
+    
+    .nav-menu a {
+        margin: 0;
     }
 }
