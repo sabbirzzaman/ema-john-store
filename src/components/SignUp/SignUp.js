@@ -12,21 +12,24 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
-    const [createUserWithEmailAndPassword, user, error] =
+    const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        if(password !== confirmPassword) {
-            return setDisplayError('Invalid! Password not matched.')
+        
+        if (password.length < 6) {
+            return setDisplayError('Password should 6 or more character.')
+        } else if (password !== confirmPassword) {
+            return setDisplayError('Invalid! Password not matched.');
         } else {
-            setDisplayError('')
+            setDisplayError('');
         }
 
         createUserWithEmailAndPassword(email, password);
     };
 
-    if(user) {
+    if (user) {
         navigate('/');
     }
 
