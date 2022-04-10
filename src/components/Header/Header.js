@@ -40,6 +40,7 @@ const Header = () => {
                     <div className={open ? 'nav-menu' : 'nav-menu hide-nav'}>
                         <CustomLink to="/home">Home</CustomLink>
                         <CustomLink to="/shop">Shop</CustomLink>
+                        <CustomLink to="/login">Login</CustomLink>
                     </div>
                     <FontAwesomeIcon onClick={() => setOpen(!open)} icon={faBars}></FontAwesomeIcon>
                 </div>

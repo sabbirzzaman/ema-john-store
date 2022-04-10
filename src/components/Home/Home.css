@@ -35,6 +35,8 @@
 
 .hero-image img {
     width: 350px;
+    box-shadow: -10px 10px #ffe0b3;
+    border-radius: 6px;
 }
 
 /* Medium devices (landscape tablets, 689px and up) */
