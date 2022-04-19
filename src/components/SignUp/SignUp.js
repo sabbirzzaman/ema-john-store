@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -12,14 +12,14 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
-    const [createUserWithEmailAndPassword, user, loading, error] =
+    const [createUserWithEmailAndPassword, user] =
         useCreateUserWithEmailAndPassword(auth);
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        
+
         if (password.length < 6) {
-            return setDisplayError('Password should 6 or more character.')
+            return setDisplayError('Password should 6 or more character.');
         } else if (password !== confirmPassword) {
             return setDisplayError('Invalid! Password not matched.');
         } else {
@@ -29,9 +29,11 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, password);
     };
 
-    if (user) {
-        navigate('/');
-    }
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user]);
 
     return (
         <div className="form-container">

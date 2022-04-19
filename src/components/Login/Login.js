@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -21,9 +21,11 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    if(user) {
-        navigate(from, {replace: true});
-    }
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user]);
 
     return (
         <div className="form-container">
