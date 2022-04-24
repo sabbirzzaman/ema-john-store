@@ -61,7 +61,7 @@ const Shop = () => {
                     <h3>Products Per Page</h3>
                     <div className="filter">
                         <select onChange={e => setQuantity(e.target.value)}>
-                            <option value='6'>Show 5 products</option>
+                            <option value='6'>Show 6 products</option>
                             <option value='12' selected>Show 12 products</option>
                             <option value='24'>Show 24 products</option>
                             <option value='308'>Show 30 products</option>
