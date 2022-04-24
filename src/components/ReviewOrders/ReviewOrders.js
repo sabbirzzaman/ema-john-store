@@ -14,9 +14,9 @@ const ReviewOrders = () => {
     const [cart, setCart] = useCart(products);
 
     const removeItemHandle = (product) => {
-        const restItem = cart.filter((item) => item.id !== product.id);
+        const restItem = cart.filter((item) => item._id !== product._id);
         setCart(restItem);
-        removeFromDb(product.id);
+        removeFromDb(product._id);
     };
 
     const clearCart = () => {
@@ -38,7 +38,7 @@ const ReviewOrders = () => {
 
                 {cart.map((product) => (
                     <ReviewItem
-                        key={product.id}
+                        key={product._id}
                         removeItemHandle={removeItemHandle}
                         product={product}
                     ></ReviewItem>
