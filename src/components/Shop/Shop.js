@@ -26,10 +26,10 @@ const Shop = () => {
             .then((res) => res.json())
             .then((data) => {
                 const totalProducts = data.productsCount;
-                const pages = Math.ceil(totalProducts / 12);
+                const pages = Math.ceil(totalProducts / quantity);
                 setPagination(pages);
             });
-    }, []);
+    }, [quantity]);
 
     const addToCartHandle = (product) => {
         const existItem = cart.find((item) => item._id === product._id);
@@ -64,7 +64,7 @@ const Shop = () => {
                             <option value='6'>Show 6 products</option>
                             <option value='12' selected>Show 12 products</option>
                             <option value='24'>Show 24 products</option>
-                            <option value='308'>Show 30 products</option>
+                            <option value='30'>Show 30 products</option>
                         </select>
                     </div>
                 </div>
