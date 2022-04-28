@@ -60,9 +60,9 @@ const Shop = () => {
                 <div className="filter-container">
                     <h3>Products Per Page</h3>
                     <div className="filter">
-                        <select onChange={e => setQuantity(e.target.value)}>
-                            <option value='6'>Show 6 products</option>
-                            <option value='12' selected>Show 12 products</option>
+                        <select defaultValue={'12'} onChange={e => setQuantity(e.target.value)}>
+                            <option value='9'>Show 9 products</option>
+                            <option value='12'>Show 12 products</option>
                             <option value='24'>Show 24 products</option>
                             <option value='30'>Show 30 products</option>
                         </select>
