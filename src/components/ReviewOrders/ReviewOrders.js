@@ -3,16 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useCart from '../../Hooks/useCart';
-import useProducts from '../../Hooks/useProducts';
 import { deleteCart, removeFromDb } from '../../utilities/productsDb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './ReviewOrders.css';
 
 const ReviewOrders = () => {
-    const [products] = useProducts();
-    const [cart, setCart] = useCart(products);
-
+    const [cart, setCart] = useCart();
+    const navigate = useNavigate();
+    
     const removeItemHandle = (product) => {
         const restItem = cart.filter((item) => item._id !== product._id);
         setCart(restItem);
@@ -24,7 +23,6 @@ const ReviewOrders = () => {
         deleteCart();
     };
 
-    const navigate = useNavigate();
 
     return (
         <div className="order-container">

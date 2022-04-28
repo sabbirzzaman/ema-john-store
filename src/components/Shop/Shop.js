@@ -10,7 +10,7 @@ import './Shop.css';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const [pagination, setPagination] = useState(0);
     const [currentPage, setCurrentPage] = useState(0);
     const [quantity, setQuantity] = useState(12);
